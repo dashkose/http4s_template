@@ -1,0 +1,14 @@
+version: '2.9'
+
+services:
+
+  zio-http4s:
+    mem_limit: 1024m
+    cpus: 0.25
+    image: zio_http4s:latest
+    container_name: zio_http4s
+    ports:
+      - 8080:8080
+    environment:
+      - HTTP_HOST=${HTTP_HOST}
+      - HTTP_PORT=${HTTP_PORT}
