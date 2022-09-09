@@ -1,12 +1,13 @@
-package com.accenture.api
+package ae.maf.api
 
-import com.accenture.api.protocol.errors.GeneralError
-import com.accenture.api.protocol.library.Book
-import sttp.tapir.json.zio.jsonBody
-import sttp.tapir.{PublicEndpoint, endpoint}
+import sttp.tapir.*
 import sttp.tapir.generic.auto.*
 import sttp.tapir.json.zio.*
-import sttp.tapir.*
+import sttp.tapir.json.zio.jsonBody
+import sttp.tapir.{PublicEndpoint, endpoint}
+
+import ae.maf.api.protocol.errors.GeneralError
+import ae.maf.api.protocol.library.Book
 
 object spec {
   val booksListing: PublicEndpoint[Unit, GeneralError, List[Book], Any] = endpoint.get

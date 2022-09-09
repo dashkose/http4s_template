@@ -1,4 +1,4 @@
-package com.accenture.api.protocol
+package ae.maf.api.protocol
 
 import zio.json.{DeriveJsonDecoder, DeriveJsonEncoder, JsonDecoder, JsonEncoder}
 

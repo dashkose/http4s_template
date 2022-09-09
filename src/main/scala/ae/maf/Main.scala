@@ -1,18 +1,20 @@
-package com.accenture
+package ae.maf
 
-import com.accenture.api.Api
-import com.accenture.config.ApiConfig
-import com.accenture.controller.LibraryController
-import com.accenture.services.LibraryService
+import scala.io.StdIn
+
 import org.http4s.blaze.server.BlazeServerBuilder
 import org.http4s.server.Router
 import sttp.tapir.server.http4s.Http4sServerOptions
 import sttp.tapir.server.http4s.ztapir.ZHttp4sServerInterpreter
-import zio.interop.catz.*
 import sttp.tapir.server.metrics.prometheus.PrometheusMetrics
 import zio.*
+import zio.interop.catz.*
 import zio.logging.backend.SLF4J
-import scala.io.StdIn
+
+import ae.maf.api.Api
+import ae.maf.config.ApiConfig
+import ae.maf.controller.LibraryController
+import ae.maf.services.LibraryService
 
 object Main extends ZIOAppDefault {
 

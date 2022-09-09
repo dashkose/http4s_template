@@ -1,19 +1,20 @@
-package com.accenture.api
+package ae.maf.api
 
-import com.accenture.api.Api
-import com.accenture.api.protocol.library.{Author, Book}
 import sttp.client3.testing.SttpBackendStub
 import sttp.client3.ziojson.*
 import sttp.client3.{Response, ResponseException, UriContext, basicRequest}
+import sttp.tapir.server.metrics.prometheus.PrometheusMetrics
 import sttp.tapir.server.stub.TapirStubInterpreter
 import sttp.tapir.ztapir.RIOMonadError
 import zio.*
-import sttp.tapir.server.metrics.prometheus.PrometheusMetrics
-import com.accenture.controller.LibraryController
-import com.accenture.services.LibraryService
-import zio.test.Assertion.*
 import zio.test.*
+import zio.test.Assertion.*
 import zio.test.{Spec, TestEnvironment, ZIOSpecDefault, assertTrue, assertZIO}
+
+import ae.maf.api.protocol.library.Book
+import ae.maf.api.protocol.library.{Author, Book}
+import ae.maf.controller.LibraryController
+import ae.maf.services.LibraryService
 
 object ApiSpec extends ZIOSpecDefault {
 

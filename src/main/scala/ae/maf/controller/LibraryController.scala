@@ -1,10 +1,11 @@
-package com.accenture.controller
+package ae.maf.controller
 
-import com.accenture.services.LibraryService
-import com.accenture.services.LibraryService.errors
-import com.accenture.api.protocol.errors.GeneralError
-import com.accenture.api.protocol.library.Book
 import zio.*
+
+import ae.maf.api.protocol.errors.GeneralError
+import ae.maf.api.protocol.library.Book
+import ae.maf.services.LibraryService
+import ae.maf.services.LibraryService.errors.BusinessError
 
 trait LibraryController {
   def getBooks: IO[GeneralError, List[Book]]
@@ -13,7 +14,7 @@ trait LibraryController {
 object LibraryController {
   class LibraryControllerImp(libraryService: LibraryService) extends LibraryController {
     def getBooks: IO[GeneralError, List[Book]] = libraryService.getBooks.mapBoth(
-      { case errors.BusinessError(message) =>
+      { case BusinessError(message) =>
         GeneralError(message)
       },
       _.map(Book.fromDomain)

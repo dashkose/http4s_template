@@ -1,6 +1,8 @@
-package com.accenture.api.protocol
-import com.accenture.domain.library as domain
+package ae.maf.api.protocol
+
 import zio.json.{DeriveJsonDecoder, DeriveJsonEncoder, JsonDecoder, JsonEncoder}
+
+import ae.maf.domain.library as domain
 
 object library {
   case class Author(name: String)

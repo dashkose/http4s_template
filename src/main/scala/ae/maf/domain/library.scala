@@ -1,4 +1,4 @@
-package com.accenture.domain
+package ae.maf.domain
 
 object library {
   case class Author(name: String, id: Long)

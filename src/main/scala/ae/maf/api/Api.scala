@@ -1,12 +1,13 @@
-package com.accenture.api
+package ae.maf.api
 
-import com.accenture.api.protocol.{errors, library}
-import com.accenture.api.spec.booksListing
-import com.accenture.controller.LibraryController
+import spec.booksListing
 import sttp.tapir.server.metrics.prometheus.PrometheusMetrics
 import sttp.tapir.swagger.bundle.SwaggerInterpreter
 import sttp.tapir.ztapir._
 import zio.*
+
+import ae.maf.api.protocol.{errors, library}
+import ae.maf.controller.LibraryController
 
 trait Api {
   val apiEndpoints: List[ZServerEndpoint[Any, Any]]

@@ -1,8 +1,9 @@
-package com.accenture.services
+package ae.maf.services
 
-import com.accenture.domain.library.*
-import com.accenture.services.LibraryService.errors.LibraryError
+import LibraryService.errors.LibraryError
 import zio.*
+
+import ae.maf.domain.library.*
 
 trait LibraryService {
   def getBooks: ZIO[Any, LibraryError, List[Book]]

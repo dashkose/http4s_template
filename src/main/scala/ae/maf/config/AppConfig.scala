@@ -1,8 +1,8 @@
-package com.accenture.config
+package ae.maf.config
 
 import zio.*
 import zio.config.*
-import ConfigDescriptor._
+import zio.config.ConfigDescriptor._
 
 case class ApiConfig(port: Int, host: String)
 object ApiConfig {
